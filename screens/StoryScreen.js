@@ -66,7 +66,7 @@ export default class StoryScreen extends Component {
     if (current_color === "gray") {
       Speech.speak(`${title} by ${author}`);
       Speech.speak(story);
-      Speech.speak("The moral of the story is!");
+      Speech.speak("¡La moraleja de la historia es!");
       Speech.speak(moral);
     } else {
       Speech.stop();
@@ -74,7 +74,7 @@ export default class StoryScreen extends Component {
   }
 
   likeAction = () => {
-    console.log("here");
+    console.log("aquí");
     if (this.state.is_liked) {
       firebase
         .database()
@@ -96,7 +96,7 @@ export default class StoryScreen extends Component {
 
   render() {
     if (!this.props.route.params) {
-      this.props.navigation.navigate("Home");
+      this.props.navigation.navigate("Inicio");
     } else if (!this.state.fontsLoaded) {
       return <AppLoading />;
     } else {
@@ -122,7 +122,7 @@ export default class StoryScreen extends Component {
                     : styles.appTitleText
                 }
               >
-                Storytelling App
+                Aplicación para narrar historias
               </Text>
             </View>
           </View>
@@ -205,7 +205,7 @@ export default class StoryScreen extends Component {
                       : styles.moralText
                   }
                 >
-                  Moral - {this.props.route.params.story.moral}
+                  Moraleja - {this.props.route.params.story.moral}
                 </Text>
               </View>
               <View style={styles.actionContainer}>
