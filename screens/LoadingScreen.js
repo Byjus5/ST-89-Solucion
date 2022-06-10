@@ -10,9 +10,9 @@ export default class LoadingScreen extends Component {
   checkIfLoggedIn = () => {
     firebase.auth().onAuthStateChanged(user => {
       if (user) {
-        this.props.navigation.navigate("PantalladePanel");
+        this.props.navigation.navigate("LoadingScreen");
       } else {
-        this.props.navigation.navigate("PantalladeIniciodeSesión");
+        this.props.navigation.navigate("LoginScreen");
       }
     });
   };
